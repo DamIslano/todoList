@@ -12,16 +12,8 @@ export default createStore({
     scope(state) { return state.active.length + state.succsessful.length },
     taskList: state => state.taskList,
     taskItem: state => state.todo,
-    active: state => {
-      let activeArr = []
-      state.taskList.forEach(obj => { !obj.done ? activeArr.push(obj.done) : false })
-      return activeArr.length
-    },
-    succsessful: state => {
-      let succsessfulArr = []
-      state.taskList.forEach(obj => { obj.done ? succsessfulArr.push(obj.done) : false })
-      return succsessfulArr.length
-    },
+    todoCountActive: state => state.taskList.filter(todo => !todo.done).length,
+    todoCountSuccsessful: state => state.taskList.filter(todo => todo.done).length,
     scope: state => state.taskList.length ,
   },
   mutations: {

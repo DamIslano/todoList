@@ -10,12 +10,12 @@
 
         <div class="main__tasks task">
           <p class="task__title">Active</p>
-          <p class="task__counter">{{ active }}</p>
+          <p class="task__counter">{{ todoCountActive }}</p>
         </div>
 
         <div class="main__tasks task">
           <p class="task__title">Succsessful</p>
-          <p class="task__counter">{{ succsessful }}</p>
+          <p class="task__counter">{{ todoCountSuccsessful }}</p>
         </div>
       </div>
     </div>
@@ -38,16 +38,7 @@ export default {
     AppHeaderButton
   },
   computed: {
-    // scope() {
-    //   return this.active + this.succsessful
-    // },
-    // active() {
-    //   return this.$store.getters.active
-    // },
-    // succsessful() {
-    //   return this.$store.getters.succsessful
-    // },
-    ...mapGetters(['scope', 'active', 'succsessful'])
+    ...mapGetters(['scope', 'todoCountActive', 'todoCountSuccsessful'])
   }
 }
 </script>
