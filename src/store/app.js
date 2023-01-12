@@ -9,7 +9,7 @@ export default createStore({
     }
   },
   getters: {
-    scope(state) { return state.active.length + state.succsessful.length },
+    scope: state => state.active.length + state.succsessful.length,
     taskList: state => state.taskList,
     taskItem: state => state.todo,
     todoCountActive: state => state.taskList.filter(todo => !todo.done).length,
